@@ -1,0 +1,106 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ================= BACKGROUND VIDEO ================= */
+.video-container {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+#bg-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.15);
+  z-index: 1;
+}
+
+/* ================= LEFT PANEL ================= */
+.left-panel {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 300px;
+  background: #f1f1f1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 5;
+  overflow-y: auto;
+}
+
+.left-panel a {
+  text-decoration: none;
+  padding: 12px;
+  background: white;
+  color: black;
+  border-radius: 6px;
+  text-align: center;
+  transition: 0.3s;
+  font-family: Arial;
+}
+
+.left-panel a:hover {
+  transform: translateX(5px);
+  background: #e6e6e6;
+}
+
+/* ================= LOGO ================= */
+.logo {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  width: 100px;
+  z-index: 999;
+}
+
+/* ================= RIGHT VIDEO ================= */
+.right-video {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  width: 300px;
+  height: 400px;
+  z-index: 6;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.right-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+
+  .left-panel {
+    position: relative;
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .right-video {
+    display: none;
+  }
+
+  .logo {
+    width: 60px;
+  }
+}
